@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 9000;
+const port = process.env.PORT || 9000
 const jwt = require("jsonwebtoken");
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
@@ -31,7 +31,7 @@ cloudinary.config({
 
 main().catch((err) => console.log(`unable to connect ${err}`));
 async function main(){
-    await mongoose.connect('mongodb+srv://arshdeep725199:NCJqFzws2nPLT2HN@cluster0.3tvhxfz.mongodb.net/ecpmmerce?retryWrites=true&w=majority');
+    await mongoose.connect(process.env.MONGODB_URI);
     console.log("Database Connected!");
 }
 
