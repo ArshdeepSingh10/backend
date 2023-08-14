@@ -31,7 +31,7 @@ cloudinary.config({
 
 main().catch((err) => console.log(`unable to connect ${err}`));
 async function main(){
-    await mongoose.connect('mongodb+srv://arshdeep725199:NCJqFzws2nPLT2HN@cluster0.3tvhxfz.mongodb.net/ecommerce?retryWrites=true&w=majority');
+    await mongoose.connect('mongodb+srv://arshdeep725199:NCJqFzws2nPLT2HN@cluster0.3tvhxfz.mongodb.net/ecommerce');
     console.log("Database Connected!");
 }
 
