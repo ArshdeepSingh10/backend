@@ -48,6 +48,7 @@ const showallproduct = async(req, res) =>{
     try{
     
         const allProducts = await products.find();
+        console.log(allProducts);
         res.send(allProducts);
     }
     catch(err){
