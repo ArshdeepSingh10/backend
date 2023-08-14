@@ -21,9 +21,10 @@ app.use(cookieParser());
 // app.use(cors())
 
 app.use(cors({
-    origin:["https://ecommerce-orcin-three.vercel.app"],
+    origin: ["https://ecommerce-orcin-three.vercel.app"],
     credentials: true,
-    }));
+}));
+
 app.use(express.json());
 
 cloudinary.config({ 
