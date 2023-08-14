@@ -6,10 +6,9 @@
   
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "install-server": "npm install",
+    "start-server": "node index.js",
     
-    "install-client": "npm install",
-    "build-client": "npm run build",
-    "start-client": "npm run start"
   },
   "keywords": [],
   "author": "",
