@@ -19,7 +19,7 @@ const { addorder ,allorder, updateOrder } = require("./control/order");
 
 app.use(cookieParser());
 // app.use(cors())
-app.use(cors({ credentials: true, origin: 'http://localhost:3000'}));
+app.use(cors({ credentials: true, origin: 'https://ecommerce-orcin-three.vercel.app'}));
 app.use(express.json());
 
 cloudinary.config({ 
