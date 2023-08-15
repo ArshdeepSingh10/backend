@@ -96,7 +96,7 @@ app.patch('/admin/order' , updateOrder)
 app.get('/checkout',auth)
 app.post('/login', loginuser);
 // app.get('/account', auths);
-app.get('/account',auths,async function(req,res){
+app.get('/account', auths , async function(req,res){
     if (req.query.clearToken === 'true') {
         res.clearCookie('token');
         res.status(200).send('Token cookie deleted');
