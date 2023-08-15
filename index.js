@@ -98,7 +98,7 @@ app.post('/login', loginuser);
 // app.get('/account', auths);
 app.get('/account', auths , async function(req,res){
     if (req.query.clearToken ==='true') {
-        res.clearCookie('token');
+       await res.clearCookie('token');
         res.status(200).send('Token cookie deleted');
       } else {
         const userData = req.user;
