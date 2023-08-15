@@ -84,8 +84,10 @@ const loginuser = async (req, res) => {
       
       const token = jwt.sign(payload, "ibdvjbdi");
       res.cookie('token', token, {
-        expires: new Date(Date.now() + (3600 * 1000)), 
+        expires: new Date(Date.now() + (3600 * 1000)),
+        secure:true,
         httpOnly: true,
+        
         
       });
       
