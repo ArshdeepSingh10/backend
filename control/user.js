@@ -87,6 +87,7 @@ const loginuser = async (req, res) => {
         expires: new Date(Date.now() + (3600 * 1000)),
         secure:true,
         httpOnly: true,
+        sameSite: 'none',
         
         
       });
