@@ -98,7 +98,7 @@ app.post('/login', loginuser);
 // app.get('/account', auths);
 app.get('/account', auths , async function(req,res){
     if (req.query.clearToken ==='true') {
-       await res.clearCookie('token'{
+       await res.clearCookie('token',{
         httpOnly: true,
         secure: true, // Set to true if using HTTPS
         sameSite: "none",
