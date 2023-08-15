@@ -17,13 +17,13 @@ const uploadImageToCloudinary = (file) => {
 const createProduct = async (req ,res) => {
     try{
         const prd = req.body;
-        console.log(prd);
+     
 if(!prd){
     return res.status(400).send("details of product are required !");
 
 }
 if (!req.files || req.files.length === 0) {
-  console.log('as');
+
     return res.status(400).send("Image file is required!");
   }
 
