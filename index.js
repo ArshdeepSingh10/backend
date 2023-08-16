@@ -91,6 +91,7 @@ app.get('/',function(req, res){
       console.log(err)
   }
   })
+app.post("/admin", upload.array('image'), createProduct);
 app.get('/admin/order',  allorder);
 app.patch('/admin/order' , updateOrder)
 app.get('/checkout',auth)
@@ -115,7 +116,7 @@ app.get('/account', auths , async function(req,res){
       }
 });
 
-app.post("/admin", createProduct);
+
 
 app.get('/:category' , showallproduct);
 app.get('/:category/:proid',showallproduct);
