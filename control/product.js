@@ -4,26 +4,25 @@ const path = require("path");
 const uploadImageToCloudinary = (file) => {
     return new Promise((resolve, reject) => {
       const folder = "ecommers";
-      cloudinary.uploader.upload(file.path , { folder: folder }, (error, result) => {
+      cloudinary.v2.uploader.upload(file.path , { folder: folder }, (error, result) => {
         if (error) reject(error);
         else resolve(result.secure_url);
       });
     });
   };
-  
 
 
 
 const createProduct = async (req ,res) => {
     try{
         const prd = req.body;
-     
+        console.log(prd);
 if(!prd){
     return res.status(400).send("details of product are required !");
 
 }
 if (!req.files || req.files.length === 0) {
-
+  console.log('as');
     return res.status(400).send("Image file is required!");
   }
 
