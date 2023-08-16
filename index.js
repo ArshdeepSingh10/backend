@@ -93,7 +93,7 @@ const storage = multer.diskStorage({
 //       console.log(err)
 //   }
 //   })
-app.post("/admin", upload.array('image'), createProduct);
+app.post('/admin', upload.array('image'), createProduct);
 app.get('/admin/order',  allorder);
 app.patch('/admin/order' , updateOrder)
 app.get('/checkout',auth)
