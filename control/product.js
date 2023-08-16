@@ -1,10 +1,10 @@
 const products = require("../Schema/Schema");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 const path = require("path");
 const uploadImageToCloudinary = (file) => {
     return new Promise((resolve, reject) => {
       const folder = "ecommers";
-      cloudinary.v2.uploader.upload(file.path , { folder: folder }, (error, result) => {
+      cloudinary.uploader.upload(file.path , { folder: folder }, (error, result) => {
         if (error) reject(error);
         else resolve(result.secure_url);
       });
