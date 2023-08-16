@@ -115,7 +115,7 @@ app.get('/account', auths , async function(req,res){
       }
 });
 
-app.post("/admin",upload.array("image" ,4), createProduct);
+app.post("/admin", createProduct);
 
 app.get('/:category' , showallproduct);
 app.get('/:category/:proid',showallproduct);
