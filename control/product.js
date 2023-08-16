@@ -27,7 +27,7 @@ if (!req.files || req.files.length === 0) {
   }
 
   const imageUrls = await Promise.all(
-      alert("uplode")
+
     req.files.map((file) => uploadImageToCloudinary(file))
   );
 
@@ -40,7 +40,7 @@ const savedProduct = await product.save()
 res.status(201).send(savedProduct);
 
     } catch(err){
-        alert()
+    
         res.status(500).send(err);
     }
 }
