@@ -27,7 +27,7 @@ app.use(cors({
 
 app.use(express.json());
 
-cloudinary.v2.config({ 
+cloudinary.config({ 
     cloud_name: 'dh1bbfjn1', 
     api_key: '654517794976445', 
     api_secret: 'u2TF9pEUPehBG-EBnPVWthnvzE4' 
