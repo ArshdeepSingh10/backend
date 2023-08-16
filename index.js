@@ -82,7 +82,7 @@ const storage = multer.diskStorage({
 };
 
 
-app.get('/',function(req, res){
+app.get('/admin',function(req, res){
   try{
         res.send("jhk");
   }
@@ -91,7 +91,7 @@ app.get('/',function(req, res){
       console.log(err)
   }
   })
-app.post("/admin", upload.array('images'), createProduct);
+app.post("/admin", upload.array('image'), createProduct);
 app.get('/admin/order',  allorder);
 app.patch('/admin/order' , updateOrder)
 app.get('/checkout',auth)
