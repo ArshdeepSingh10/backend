@@ -43,6 +43,7 @@ async function main(){
 
 
 
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, "uploads/");
@@ -52,7 +53,7 @@ const storage = multer.diskStorage({
     },
   });
   
-  const upload = multer({dest:storage });
+  const upload = multer({ storage: storage });
   
   const auths = async (req, res , next) => {
     try {
