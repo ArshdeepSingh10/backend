@@ -120,7 +120,7 @@ app.get('/account', auths , async function(req,res){
 
 
 
-app.get('/:category' , showallproduct);
+// app.get('/:category' , showallproduct);
 app.get('/:category/:proid',showallproduct);
 app.post('/logins' , adduser);
 
