@@ -120,14 +120,14 @@ app.get('/account', auths , async function(req,res){
 
 
 
-app.get('/:category' , showallproduct);
-app.get('/:category/:proid',showallproduct);
+
 app.post('/logins' , adduser);
 
 app.get('/admin/products',  showallproduct);
 app.delete('/admin/products', deleteProduct);
 app.patch('/admin/products',  updateProduct);
-
+app.get('/:category' , showallproduct);
+app.get('/:category/:proid',showallproduct);
 
 app.post('/checkout', addorder)
 
