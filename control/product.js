@@ -26,14 +26,15 @@ if (!req.files || req.files.length === 0) {
     return res.status(400).send("Image file is required!");
   }
 
-  const imageUrls = await Promise.all(
+        {/* const imageUrls = await Promise.all(
 
     req.files.map((file) => uploadImageToCloudinary(file))
-  );
+  );*/}
 
   const product = new products({
-    ...prd,
-    image: imageUrls,
+    ...prd
+      {/*,
+    image: imageUrls,*/}
   });
 
 const savedProduct = await product.save()
