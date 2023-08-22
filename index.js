@@ -96,7 +96,7 @@ const storage = multer.diskStorage({
 app.get('/admin/products',  showallproduct);
 app.delete('/admin/products', deleteProduct);
 app.patch('/admin/products',  updateProduct);
-app.post('/admin', upload.array('image'), createProduct);
+app.post('/admin', createProduct);
 app.get('/admin/order',  allorder);
 app.patch('/admin/order' , updateOrder)
 app.get('/checkout',auth)
