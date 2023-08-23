@@ -81,7 +81,7 @@ const upload = multer({ storage: storage });
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-app.post("/admin",upload.array("image"), createProduct);
+app.post("/admin", createProduct);
 app.get('/admin/products',  showallproduct);
 app.delete('/admin/products', deleteProduct);
 app.patch('/admin/products',  updateProduct);
