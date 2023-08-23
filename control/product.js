@@ -2,18 +2,18 @@ const products = require("../Schema/Schema");
 const cloudinary = require("cloudinary").v2;
 const path = require("path");
 const uploadImageToCloudinary = (file) => {
-    return new Promise((resolve, reject) => {
-      const folder = "ecommers";
-      cloudinary.v2.uploader.upload(file.path , { folder: folder }, (error, result) => {
-        if (error) reject(error);
-        else resolve(result.secure_url);
-      });
+  return new Promise((resolve, reject) => {
+    const folder = "ecommers"; // Replace "your-folder-name" with the desired folder name
+    cloudinary.v2.uploader.upload(file.path , { folder: folder }, (error, result) => {
+      if (error) reject(error);
+      else resolve(result.secure_url);
     });
-  };
+  });
+};
 
 
 
-const createProduct = async (req ,res) => {
+ const createProduct = async (req ,res) => {
     try{
         const prd = req.body;
         console.log(prd);
@@ -26,8 +26,9 @@ if (!req.files || req.files.length === 0) {
     return res.status(400).send("Image file is required!");
   }
 
-    const imageUrls = await Promise.all(
-
+  // Upload the image file to Cloudinary
+  // const imageUrl = await uploadImageToCloudinary(req.file);
+  const imageUrls = await Promise.all(
     req.files.map((file) => uploadImageToCloudinary(file))
   );
 
@@ -40,12 +41,10 @@ const savedProduct = await product.save()
 res.status(201).send(savedProduct);
 
     } catch(err){
-    
         res.status(500).send(err);
     }
 }
-
-const showallproduct = async(req, res) =>{
+     const showallproduct = async(req, res) =>{
     try{
     
         const allProducts = await products.find();
