@@ -28,10 +28,10 @@ app.use(cors({
 app.use(express.json());
 // cloudinary.config(process.env.CLOUDINARY_URL);
 cloudinary.config({ 
-    cloud_name: 'dh1bbfjn1', 
-    api_key: '654517794976445', 
-    api_secret: 'u2TF9pEUPehBG-EBnPVWthnvzE4'
-  });
+  cloud_name: 'dh1bbfjn1', 
+  api_key: '654517794976445', 
+  api_secret: 'u2TF9pEUPehBG-EBnPVWthnvzE4' 
+});
 
 
 main().catch((err) => console.log(`unable to connect ${err}`));
@@ -44,15 +44,15 @@ async function main(){
 
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, "uploads/");
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + "-" + Date.now());
-    },
-  });
-  
- const upload = multer({ storage: storage });
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + "-" + Date.now());
+  },
+});
+
+const upload = multer({ storage: storage });
   
   const auths = async (req, res , next) => {
     try {
@@ -81,11 +81,11 @@ const storage = multer.diskStorage({
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
-
+app.post("/admin",upload.array("image"), createProduct);
 app.get('/admin/products',  showallproduct);
 app.delete('/admin/products', deleteProduct);
 app.patch('/admin/products',  updateProduct);
-app.post('/admin',upload.array("image"), createProduct);
+
 app.get('/admin/order',  allorder);
 app.patch('/admin/order' , updateOrder)
 app.get('/checkout',auth)
