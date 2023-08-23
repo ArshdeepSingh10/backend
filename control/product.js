@@ -28,13 +28,13 @@ if (!req.files || req.files.length === 0) {
 
   // Upload the image file to Cloudinary
   // const imageUrl = await uploadImageToCloudinary(req.file);
-  const imageUrls = await Promise.all(
-    req.files.map((file) => uploadImageToCloudinary(file))
-  );
+  // const imageUrls = await Promise.all(
+    // req.files.map((file) => uploadImageToCloudinary(file))
+  // );
 
   const product = new products({
-    ...prd,
-    image: imageUrls,
+    ...prd
+    // image: imageUrls,
   });
 
 const savedProduct = await product.save()
