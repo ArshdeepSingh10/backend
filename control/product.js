@@ -32,7 +32,7 @@ if (!req.files || req.files.length === 0) {
     // req.files.map((file) => uploadImageToCloudinary(file))
   // );
 
-  const product = new products(prd);
+  const product = new products({prd});
     // image: imageUrls,
   // );
 
